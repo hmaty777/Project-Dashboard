@@ -1,5 +1,5 @@
 [build]
-  command = "npm install && node node_modules/vite/bin/vite.js build"
+  command = "node prebuild.js"
   publish = "dist"
 
 [build.environment]
