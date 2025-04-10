@@ -1,0 +1,5 @@
+date,site,category,value,metric
+2024-01-01,Site A,Switch Onboarding,10,Count
+2024-01-01,Site B,Switch Onboarding,15,Count
+2024-01-01,Site A,Upgrade Time,2.5,Hours
+2024-01-01,Site B,Workload Migration,100,Items
