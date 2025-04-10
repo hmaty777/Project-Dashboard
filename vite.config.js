@@ -22,7 +22,17 @@ export default defineConfig({
   build: {
     target: 'esnext',
     minify: 'esbuild',
-    sourcemap: true
+    sourcemap: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          mui: ['@mui/material', '@mui/icons-material'],
+          charts: ['recharts', 'react-gauge-component']
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1000
   },
   optimizeDeps: {
     include: [
@@ -32,7 +42,8 @@ export default defineConfig({
       '@emotion/react',
       '@emotion/styled',
       '@mui/x-data-grid',
-      'recharts'
+      'recharts',
+      'react-gauge-component'
     ]
   },
   esbuild: {
