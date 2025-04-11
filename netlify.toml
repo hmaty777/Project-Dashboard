@@ -1,11 +1,10 @@
 [build]
-  command = "rm -rf package-lock.json node_modules && npm install && npm run build"
+  command = "rm -rf package-lock.json node_modules && NODE_ENV=development npm install && npm run build"
   publish = "dist"
 
 [build.environment]
   NODE_VERSION = "18.17.0"
   NPM_FLAGS = "--no-optional"
-  NODE_ENV = "production"
 
 [functions]
   included_files = ["dist/**/*"]
