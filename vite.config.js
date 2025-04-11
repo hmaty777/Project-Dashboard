@@ -17,12 +17,15 @@ export default defineConfig({
     }
   },
   define: {
-    'process.env.NODE_ENV': '"development"'
+    // Changed from hardcoded "development" to process.env.NODE_ENV or "production"
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || "production")
   },
   build: {
     target: 'esnext',
     minify: 'esbuild',
     sourcemap: true,
+    outDir: 'dist', // Explicitly set output directory
+    emptyOutDir: true, // Clear the output directory before building
     rollupOptions: {
       output: {
         manualChunks: {
@@ -49,4 +52,4 @@ export default defineConfig({
   esbuild: {
     logOverride: { 'this-is-undefined-in-esm': 'silent' }
   }
-}) 
+})

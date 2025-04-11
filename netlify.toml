@@ -1,11 +1,24 @@
-[build]
-  command = "npm install && npm run build"
+[
+build
+]
+  command = "npm install && npm install vite @vitejs/plugin-react --save-dev && npm run build"
   publish = "dist"
 
-[build.environment]
+[
+build.environment
+]
   NODE_VERSION = "18.17.0"
-  NPM_FLAGS = "--no-optional"
-  NODE_ENV = "production"
+  NPM_FLAGS = "--legacy-peer-deps"
+  NODE_ENV = "development"
 
-[functions]
+[[
+redirects
+]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[
+functions
+]
   included_files = ["dist/**/*"]
